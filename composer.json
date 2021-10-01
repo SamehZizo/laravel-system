@@ -1,0 +1,26 @@
+{
+    "name": "sameh/laravel-system",
+    "description": "Dynamic System Package",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SamehZizo",
+            "email": "samh_zamalkawe@hotmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Sameh\\LaravelSystem\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel" : {
+            "providers" : [
+                "Sameh\\LaravelSystem\\LaravelSystemServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
