@@ -16,8 +16,8 @@
         }
     },
     "extra": {
-        "laravel" : {
-            "providers" : [
+        "laravel": {
+            "providers": [
                 "Sameh\\LaravelSystem\\LaravelSystemServiceProvider"
             ]
         }
