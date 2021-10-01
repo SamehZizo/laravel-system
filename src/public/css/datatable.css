@@ -1,0 +1,22 @@
+.data-table-style {
+    font-size: smaller;
+    text-align: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    /*border-bottom: 1px solid #dee2e6 !important;*/
+}
+
+.data-table-style th, td {
+    background-image: none !important;
+    border-bottom: none !important;
+    padding: 7px 20px !important;
+    margin: 0 !important;
+}
+
+/*.data-table-style a {
+    color: gray;
+}
+
+.data-table-style a:hover {
+    text-decoration: none;
+}*/

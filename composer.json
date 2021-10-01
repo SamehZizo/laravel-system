@@ -13,7 +13,11 @@
     "autoload": {
         "psr-4": {
             "Sameh\\LaravelSystem\\": "src/"
-        }
+        },
+        "classmap": [
+            "database",
+            "package/sameh/laravel-system/src/Migrations"
+        ]
     },
     "extra": {
         "laravel": {
@@ -22,5 +26,7 @@
             ]
         }
     },
-    "require": {}
+    "require": {
+        "yajra/laravel-datatables-oracle": "^9.18"
+    }
 }
