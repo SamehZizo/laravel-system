@@ -15,22 +15,13 @@ class LaravelSystemServiceProvider extends ServiceProvider
         });
 
         if ($this->app->runningInConsole()) {
-            $this->registerMigrations();
+            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         }
     }
 
     public function register()
     {
 
-    }
-
-    private function registerMigrations()
-    {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        /*dd(__DIR__ . '/../database/migrations');
-        $this->publishes([
-            __DIR__ . '/../database/migrations' => database_path('migrations'),
-        ], 'laravel-system-migrations');*/
     }
 
 }
