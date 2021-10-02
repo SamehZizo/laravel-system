@@ -2,10 +2,29 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Schema\Builder;
 use Illuminate\Support\Facades\Schema;
 
 class LaravelSystemCreateSystemFieldsTable extends Migration
 {
+
+    /**
+     * The database schema.
+     *
+     * @var Builder
+     */
+    protected $schema;
+
+    /**
+     * Create a new migration instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->schema = Schema::connection($this->getConnection());
+    }
+
     /**
      * Run the migrations.
      *
@@ -13,7 +32,7 @@ class LaravelSystemCreateSystemFieldsTable extends Migration
      */
     public function up()
     {
-        Schema::create('system_fields', function (Blueprint $table) {
+        $this->schema->create('system_fields', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->string('name')->unique();
@@ -33,6 +52,6 @@ class LaravelSystemCreateSystemFieldsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('system_fields');
+        $this->schema->dropIfExists('system_fields');
     }
 }
