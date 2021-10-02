@@ -13,11 +13,22 @@ class LaravelSystemServiceProvider extends ServiceProvider
         $this->app->bind('Illuminate\Routing\ResourceRegistrar', function () {
             return new CustomRouting($this->app['router']);
         });
+
+        if ($this->app->runningInConsole()) {
+            $this->registerMigrations();
+        }
     }
 
     public function register()
     {
 
+    }
+
+    private function registerMigrations()
+    {
+        $this->publishes([
+            __DIR__ . '/../database/migrations' => database_path('migrations'),
+        ], 'laravel-system-migrations');
     }
 
 }
