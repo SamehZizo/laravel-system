@@ -8,6 +8,8 @@ use Sameh\LaravelSystem\Routing\CustomRouting;
 class LaravelSystemServiceProvider extends ServiceProvider
 {
 
+    private $loadMigration = true;
+
     public function boot()
     {
         $this->app->bind('Illuminate\Routing\ResourceRegistrar', function () {
@@ -15,7 +17,10 @@ class LaravelSystemServiceProvider extends ServiceProvider
         });
 
         if ($this->app->runningInConsole()) {
-            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            if ($this->loadMigration) {
+                $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+                $this->loadMigration = false;
+            }
 
             $this->publishes([
                 __DIR__.'/../database/migrations' => database_path('migrations'),
