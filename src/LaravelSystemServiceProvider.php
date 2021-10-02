@@ -26,10 +26,11 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
     private function registerMigrations()
     {
-        dd(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        /*dd(__DIR__ . '/../database/migrations');
         $this->publishes([
             __DIR__ . '/../database/migrations' => database_path('migrations'),
-        ], 'laravel-system-migrations');
+        ], 'laravel-system-migrations');*/
     }
 
 }
