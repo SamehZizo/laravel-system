@@ -8,22 +8,19 @@ use Sameh\LaravelSystem\Routing\CustomRouting;
 class LaravelSystemServiceProvider extends ServiceProvider
 {
 
-    private $loadMigration = true;
-
     public function boot()
     {
         $this->app->bind('Illuminate\Routing\ResourceRegistrar', function () {
             return new CustomRouting($this->app['router']);
         });
 
+        //$this->loadViewsFrom(__DIR__.'/../resources/views', 'passport');
+
         if ($this->app->runningInConsole()) {
-            if ($this->loadMigration) {
-                $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-                $this->loadMigration = false;
-            }
+            //$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
             $this->publishes([
-                __DIR__.'/../database/migrations' => database_path('migrations'),
+                __DIR__ . '/../database/migrations' => database_path('migrations'),
             ], 'laravel-system-migrations');
 
         }
