@@ -17,11 +17,11 @@ class LaravelSystemServiceProvider extends ServiceProvider
         //$this->loadViewsFrom(__DIR__.'/../resources/views', 'passport');
 
         if ($this->app->runningInConsole()) {
-            //$this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+            $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
             $this->publishes([
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
-            ], 'laravel-system-migrations');
+            ]);
 
         }
     }
