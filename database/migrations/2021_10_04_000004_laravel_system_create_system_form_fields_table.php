@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Schema\Builder;
 use Illuminate\Support\Facades\Schema;
 
-class LaravelSystemCreateSystemFieldsTable extends Migration
+class LaravelSystemCreateSystemFormFieldsTable extends Migration
 {
 
     /**
@@ -15,10 +15,16 @@ class LaravelSystemCreateSystemFieldsTable extends Migration
      */
     public function up()
     {
-        Schema::create('system_fields', function (Blueprint $table) {
+        Schema::create('system_form_fields', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 191)->collation('utf8_bin');
-            $table->string('name', 191)->collation('utf8_bin')->unique();
+            $table->bigInteger('form_id');
+            $table->bigInteger('field_id');
+            $table->bigInteger('field_type_id');
+            $table->integer('col');
+            $table->tinyInteger('is_hidden');
+            $table->tinyInteger('is_disable');
+            $table->tinyInteger('is_required');
+            $table->bigInteger('system_model_id');
             $table->bigInteger('created_by')->nullable();
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();
@@ -35,7 +41,7 @@ class LaravelSystemCreateSystemFieldsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('system_fields');
+        Schema::dropIfExists('system_form_fields');
     }
 
 }

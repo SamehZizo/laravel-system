@@ -9,39 +9,22 @@ class LaravelSystemCreateSystemFormsTable extends Migration
 {
 
     /**
-     * The database schema.
-     *
-     * @var Builder
-     */
-    protected $schema;
-
-    /**
-     * Create a new migration instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->schema = Schema::connection($this->getConnection());
-    }
-
-    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        $this->schema->create('system_forms', function (Blueprint $table) {
+        Schema::create('system_forms', function (Blueprint $table) {
             $table->id();
-            $table->string('title2');
-            $table->string('name')->unique();
+            $table->string('title', 191)->collation('utf8_bin');
+            $table->string('code', 191)->collation('utf8_bin')->unique();
             $table->bigInteger('created_by')->nullable();
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();
-            $table->dateTime('created_at')->nullable();
-            $table->dateTime('updated_at')->nullable();
-            $table->dateTime('deleted_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
@@ -52,6 +35,7 @@ class LaravelSystemCreateSystemFormsTable extends Migration
      */
     public function down()
     {
-        $this->schema->dropIfExists('system_forms');
+        Schema::dropIfExists('system_forms');
     }
+
 }
