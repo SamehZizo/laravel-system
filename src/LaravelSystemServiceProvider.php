@@ -23,16 +23,16 @@ class LaravelSystemServiceProvider extends ServiceProvider
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
             ]);
 
-            $this->publishes([
+            /*$this->publishes([
                 __DIR__ . '/../database/seeds/SystemFieldsTypesSeeder.php' => database_path('seeds/SystemFieldsTypesSeeder.php'),
-            ]);
+            ]);*/
 
         }
     }
 
     public function register()
     {
-
+        include __DIR__.'/../database/seeds/SystemFieldsTypesSeeder.php';
     }
 
 }
