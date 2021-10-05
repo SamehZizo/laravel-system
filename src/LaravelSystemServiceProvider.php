@@ -20,7 +20,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-            $this->registerSeedsFrom(__DIR__ . '/../database/seeds');
+            //$this->registerSeedsFrom(__DIR__ . '/../database/seeds');
 
             $this->publishes([
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
@@ -31,6 +31,11 @@ class LaravelSystemServiceProvider extends ServiceProvider
             ]);*/
 
         }
+    }
+
+    public function register()
+    {
+        $this->app->make('Sameh\LarevelSystem\seeds\LaravelSystemSeeder');
     }
 
     protected function registerSeedsFrom($path)
