@@ -1,5 +1,7 @@
 <?php
 
+namespace Sameh\LaravelSystem\Seeds;
+
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Sameh\LaravelSystem\Models\System\FormBuilder\SystemFieldsType;
