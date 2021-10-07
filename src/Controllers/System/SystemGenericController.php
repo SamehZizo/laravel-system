@@ -4,9 +4,9 @@
 namespace Sameh\LaravelSystem\Controllers\System;
 
 use Sameh\LaravelSystem\Controllers\System\FormBuilder\FormBuilderController;
-use App\Models\System\FormBuilder\SystemForm;
-use App\Traits\DatatableTrait;
-use App\Traits\SystemFunctions;
+use Sameh\LaravelSystem\Models\System\FormBuilder\SystemForm;
+use Sameh\LaravelSystem\Traits\DatatableTrait;
+use Sameh\LaravelSystem\Traits\SystemFunctions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
