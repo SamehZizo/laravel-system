@@ -17,19 +17,13 @@ class LaravelSystemServiceProvider extends ServiceProvider
             return new CustomRouting($this->app['router']);
         });
 
-        //$this->loadViewsFrom(__DIR__.'/../resources/views', 'passport');
 
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-            //$this->registerSeedsFrom(__DIR__ . '/../database/seeds');
 
             $this->publishes([
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
             ]);
-
-            /*$this->publishes([
-                __DIR__ . '/../database/seeds/SystemFieldsTypesSeeder.php' => database_path('seeds/SystemFieldsTypesSeeder.php'),
-            ]);*/
 
         }
 
