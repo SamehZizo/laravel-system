@@ -1,6 +1,6 @@
 <?php
 
-namespace Sameh\LaravelSystem\Database\Seeders;
+namespace Sameh\LaravelSystem\Seeds;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;

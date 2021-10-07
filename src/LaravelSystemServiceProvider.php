@@ -5,7 +5,7 @@ namespace Sameh\LaravelSystem;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
-use Sameh\LaravelSystem\Database\Seeders\LaravelSystemSeeder;
+use Sameh\LaravelSystem\Database\Seeders\LaravelSystemDatabaseSeeder;
 use Sameh\LaravelSystem\Routing\CustomRouting;
 
 class LaravelSystemServiceProvider extends ServiceProvider
@@ -28,25 +28,9 @@ class LaravelSystemServiceProvider extends ServiceProvider
         }
     }
 
-
-
-    protected function registerSeedsFrom($path)
+    public function register()
     {
-        foreach (glob("$path/*.php") as $filename)
-        {
-            include $filename;
-            $classes = get_declared_classes();
-            $class = end($classes);
-
-            $command = Request::server('argv', null);
-            if (is_array($command)) {
-                $command = implode(' ', $command);
-                if ($command == "artisan db:seed") {
-                    Artisan::call('db:seed', ['--class' => $class]);
-                }
-            }
-
-        }
+        $this->app->make('Sameh\LaravelSystem\Seeds\LaravelSystemDatabaseSeeder');
     }
 
 }

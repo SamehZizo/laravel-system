@@ -1,10 +1,10 @@
 <?php
 
-namespace Sameh\LaravelSystem\Database\Seeders;
+namespace Sameh\LaravelSystem\Seeds;
 
 use Illuminate\Database\Seeder;
 
-class LaravelSystemSeeder extends Seeder
+class LaravelSystemDatabaseSeeder extends Seeder
 {
 
     public function run()
