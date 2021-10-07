@@ -17,6 +17,8 @@ class LaravelSystemServiceProvider extends ServiceProvider
             return new CustomRouting($this->app['router']);
         });
 
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-system');
+
 
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
