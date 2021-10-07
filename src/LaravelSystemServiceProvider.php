@@ -36,10 +36,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
         dd(get_class(LaravelSystemSeeder::class));
     }
 
-    /*public function register()
-    {
-        $this->app->make('Sameh\LaravelSystem\Database\Seeders\LaravelSystemSeeder');
-    }*/
+
 
     protected function registerSeedsFrom($path)
     {
