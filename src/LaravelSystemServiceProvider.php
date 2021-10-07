@@ -27,7 +27,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
         }
 
-        dd(get_class(LaravelSystemSeeder::class));
+        dd(get_class(new LaravelSystemSeeder()));
     }
 
 
