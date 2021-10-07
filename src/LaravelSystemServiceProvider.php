@@ -5,6 +5,7 @@ namespace Sameh\LaravelSystem;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
+use Sameh\LaravelSystem\Database\Seeders\LaravelSystemSeeder;
 use Sameh\LaravelSystem\Routing\CustomRouting;
 
 class LaravelSystemServiceProvider extends ServiceProvider
@@ -31,11 +32,13 @@ class LaravelSystemServiceProvider extends ServiceProvider
             ]);*/
 
         }
+
+        dd(get_class(LaravelSystemSeeder::class));
     }
 
     public function register()
     {
-        $this->app->make('Sameh\LaravelSystem\Database\Seeders\LaravelSystemSeeder');
+        //$this->app->make('Sameh\LaravelSystem\Database\Seeders\LaravelSystemSeeder');
     }
 
     protected function registerSeedsFrom($path)
