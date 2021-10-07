@@ -35,7 +35,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
     public function register()
     {
-        $this->app->make('Sameh\LaravelSystem\database\seeds\LaravelSystemSeeder');
+        $this->app->make('Sameh\LaravelSystem\Database\Seeders\LaravelSystemSeeder');
     }
 
     protected function registerSeedsFrom($path)
