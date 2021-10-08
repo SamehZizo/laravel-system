@@ -16,7 +16,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-system');
         $this->publishes([
-            __DIR__ . '/resources/views' => base_path('resources/views/vendor/laravel-system')
+            __DIR__ . '/resources/views' => base_path('resources/views')
         ]);
 
         $this->publishes([__DIR__ . '/public' => public_path(''),], 'public');
