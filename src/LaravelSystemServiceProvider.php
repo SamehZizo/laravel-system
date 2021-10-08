@@ -15,18 +15,14 @@ class LaravelSystemServiceProvider extends ServiceProvider
         });
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-system');
-        $this->publishes([
-            __DIR__ . '/resources/views' => base_path('resources/views')
-        ]);
+        //$this->publishes([__DIR__ . '/resources/views' => resource_path('views/vendor/laravel-system')]);
 
-        $this->publishes([__DIR__ . '/public' => public_path(''),], 'public');
+        //$this->publishes([__DIR__ . '/public' => public_path('vendor/laravel-system'),], 'public');
 
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
-            $this->publishes([
-                __DIR__ . '/database/migrations' => database_path('migrations'),
-            ]);
+            //$this->publishes([__DIR__ . '/database/migrations' => database_path('migrations'),]);
 
         }
     }
