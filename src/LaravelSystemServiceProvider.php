@@ -2,10 +2,7 @@
 
 namespace Sameh\LaravelSystem;
 
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
-use Sameh\LaravelSystem\Database\Seeders\LaravelSystemDatabaseSeeder;
 use Sameh\LaravelSystem\Routing\CustomRouting;
 
 class LaravelSystemServiceProvider extends ServiceProvider
@@ -19,6 +16,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-system');
 
+        $this->publishes([__DIR__ . '/public' => public_path(''),], 'public');
 
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
