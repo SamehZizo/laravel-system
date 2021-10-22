@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    @include('laravel-system::layouts.head')
+    @include('layouts.head')
 </head>
 <body class="system-font">
 @include('layouts.nav.nav')
