@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('laravel-system::layouts.app')
 @section('content')
-    @include('layouts.datatable')
+    @include('laravel-system::layouts.datatable')
 @endsection

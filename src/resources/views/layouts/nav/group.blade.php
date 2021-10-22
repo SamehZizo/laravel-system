@@ -5,7 +5,7 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         @foreach($items as $item)
-            @include('layouts.nav.group_item', ['title'=>$item['title'], 'icon'=>$item['icon'], 'color'=>$item['color'], 'route'=>$item['route']])
+            @include('laravel-system::layouts.nav.group_item', ['title'=>$item['title'], 'icon'=>$item['icon'], 'color'=>$item['color'], 'route'=>$item['route']])
         @endforeach
     </div>
 </div>

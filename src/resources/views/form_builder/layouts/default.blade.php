@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('laravel-system::layouts.app')
 @section('content')
     <div class="p-3">
         <div class="col-12 mb-4 p-0 d-inline-flex">

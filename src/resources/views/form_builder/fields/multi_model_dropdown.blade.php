@@ -1,4 +1,4 @@
-@extends('form_builder.layouts.generic_field')
+@extends('laravel-system::form_builder.layouts.generic_field')
 @section('field_content')
     <input type="hidden" name="{{$field->name}}[]" value="0">
     <select class="col-12 ff-text-input p-1 multi-model-dropdown" id="{{$field->id}}" type="text" name="{{$field->name}}[]"
