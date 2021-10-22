@@ -14,7 +14,7 @@
 
 <!-- Scripts -->
 {{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
-<script src="{{ asset('js/functions.js') }}" defer></script>
-<script src="{{ asset('js/datatable.js') }}" defer></script>
-<script src="{{ asset('js/form_builder.js') }}" defer></script>
-<script src="{{ asset('js/tabs.js') }}" defer></script>
+<script src="{{ asset('laravel-system/assets/js/functions.js') }}" defer></script>
+<script src="{{ asset('laravel-system/assets/js/datatable.js') }}" defer></script>
+<script src="{{ asset('laravel-system/assets/js/form_builder.js') }}" defer></script>
+<script src="{{ asset('laravel-system/assets/js/tabs.js') }}" defer></script>

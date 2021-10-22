@@ -21,10 +21,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
 
 <!-- Styles -->
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-<link href="{{ asset('css/datatable.css') }}" rel="stylesheet">
-<link href="{{ asset('css/form_builder.css') }}" rel="stylesheet">
-<link href="{{ asset('css/other.css') }}" rel="stylesheet">
+<link href="{{ asset('laravel-system/assets/css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('laravel-system/assets/css/datatable.css') }}" rel="stylesheet">
+<link href="{{ asset('laravel-system/assets/css/form_builder.css') }}" rel="stylesheet">
+<link href="{{ asset('laravel-system/assets/css/other.css') }}" rel="stylesheet">
 
 <!--jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
