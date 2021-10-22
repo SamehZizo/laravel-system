@@ -4,7 +4,7 @@
     @include('layouts.head')
 </head>
 <body class="system-font">
-@include('layouts.nav.nav')
+@include('laravel-system::layouts.nav.nav')
 <main class="{{--py-4--}} pb-4 col-12">
     @yield('content')
 </main>
