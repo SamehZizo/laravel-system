@@ -60,7 +60,7 @@ class SystemGenericController extends SystemBasicController
 
         if (view()->exists('modules.' . $this->getRouteName() . '.view')) $view = 'modules.' . $this->getRouteName() . '.view';
         else {
-            if ($child) $view = 'layouts.modules.view_child'; else $view = 'layouts.modules.view';
+            if ($child) $view = 'laravel-system::layouts.modules.view_child'; else $view = 'laravel-system::layouts.modules.view';
         }
 
         return view($view)->with('record', $record);
