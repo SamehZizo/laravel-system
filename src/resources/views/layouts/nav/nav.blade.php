@@ -1,6 +1,6 @@
 <!--<div id="app">-->
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-    @if(Auth::user())
+@if(Auth::user())
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="{{--container--}}" style="width: 100%">
             {{--<a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
@@ -14,7 +14,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     {{--@include('laravel-system::layouts.nav.menu_items')--}}
-                    @include(config('laravel_system.menu_view'))
+                    @include(config('laravel_system.menu_layout'))
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -55,9 +55,9 @@
                 </ul>
             </div>
         </div>
-    @endif
-</nav>
 
+    </nav>
+@endif
 
 <!--
 </div>-->
