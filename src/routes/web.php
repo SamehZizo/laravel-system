@@ -14,4 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes(['register' => false]);
+Route::group(['middleware' => ['web']], function () {
+
+    Auth::routes(['register' => false]);
+
+});
