@@ -18,9 +18,16 @@ class LaravelSystemServiceProvider extends ServiceProvider
         // Load View Location
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'laravel-system');
 
+        // Load Routes Location
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+
         // publishes
-        $this->publishes([__DIR__ . '/public' => public_path('laravel-system/assets'),], 'public');
-        $this->publishes([__DIR__ . '/config' => config_path(),], 'config');
+        $this->publishes([__DIR__ . '/public' => public_path('laravel-system/assets'),], 'laravel-system');
+        $this->publishes([__DIR__ . '/config' => config_path(),], 'laravel-system');
+
+        // login files
+        $this->publishes([__DIR__ . '/Controllers/Auth' => app_path('Http/Controllers'),], 'laravel-system');
+        $this->publishes([__DIR__ . '/resources/publish/auth' => resource_path('views'),], 'laravel-system');
 
         if ($this->app->runningInConsole()) {
             // Load Migration Location

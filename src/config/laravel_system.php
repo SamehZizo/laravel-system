@@ -14,4 +14,7 @@ return [
     // single menu group item
     'menu_group_item_layout' => 'laravel-system::layouts.nav.group_item',
 
+    // login view
+    'login_view' => 'laravel-system::auth.login',
+
 ];
