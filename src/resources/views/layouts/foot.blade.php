@@ -18,3 +18,5 @@
 <script src="{{ asset('laravel-system/assets/js/datatable.js') }}" defer></script>
 <script src="{{ asset('laravel-system/assets/js/form_builder.js') }}" defer></script>
 <script src="{{ asset('laravel-system/assets/js/tabs.js') }}" defer></script>
+
+@include(config('laravel_system.extra_foot_layout'))

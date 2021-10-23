@@ -5,7 +5,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
 <title>{{ config('app.name', '') }}</title>
-<link rel="shortcut icon" href="{{ asset('images/logos/logo.png') }}">
+<link rel="shortcut icon" href="{{ config('laravel_system.project_icon') }}">
 
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -28,3 +28,5 @@
 
 <!--jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+@include(config('laravel_system.extra_head_layout'))

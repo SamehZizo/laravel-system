@@ -17,4 +17,13 @@ return [
     // login view
     'login_view' => 'laravel-system::auth.login',
 
+    // project icon
+    'project_icon' => null,
+
+    // extra head
+    'extra_head_layout' => 'laravel-system::layouts.extra_head',
+
+    // extra foot
+    'extra_foot_layout' => 'laravel-system::layouts.extra_foot',
+
 ];
