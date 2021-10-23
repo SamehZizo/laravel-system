@@ -26,8 +26,8 @@ class LaravelSystemServiceProvider extends ServiceProvider
         $this->publishes([__DIR__ . '/config' => config_path(),], 'laravel-system');
 
         // login files
-        $this->publishes([__DIR__ . '/Controllers/Auth' => app_path('Http/Controllers'),], 'laravel-system');
-        $this->publishes([__DIR__ . '/resources/publish/auth' => resource_path('views'),], 'laravel-system');
+        $this->publishes([__DIR__ . '/Controllers/publish' => app_path('Http/Controllers'),], 'laravel-system');
+        $this->publishes([__DIR__ . '/resources/publish' => resource_path('views'),], 'laravel-system');
 
         if ($this->app->runningInConsole()) {
             // Load Migration Location
