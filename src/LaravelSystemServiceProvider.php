@@ -19,6 +19,7 @@ class LaravelSystemServiceProvider extends ServiceProvider
 
         //$this->publishes([__DIR__ . '/public' => public_path('vendor/laravel-system'),], 'public');
         $this->publishes([__DIR__ . '/public' => public_path('laravel-system/assets'),], 'public');
+        $this->publishes([__DIR__ . '/config' => config_path(),], 'config');
 
         if ($this->app->runningInConsole()) {
             $this->loadMigrationsFrom(__DIR__ . '/database/migrations');

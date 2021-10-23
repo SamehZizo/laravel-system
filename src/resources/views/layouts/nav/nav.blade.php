@@ -13,7 +13,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    @include('laravel-system::layouts.nav.menu_items')
+                    {{--@include('laravel-system::layouts.nav.menu_items')--}}
+                    @include(config('laravel_system.menu_view'))
                 </ul>
 
                 <!-- Right Side Of Navbar -->
