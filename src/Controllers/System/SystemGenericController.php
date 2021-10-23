@@ -29,7 +29,7 @@ class SystemGenericController extends SystemBasicController
         $datatable_route = $this->getDatatableRoute($request);
         $store_route = route($this->getStoreRouteName());
 
-        return view('layouts.datatable_layout')->with('singular_name', $singular_name)
+        return view('laravel-system::layouts.datatable_layout')->with('singular_name', $singular_name)
             ->with('datatable_route', $datatable_route)
             ->with('create_route', $create_route)->with('store_route', $store_route)
             ->with('plural_name', $plural_name)->with('route_name', $route_name)->with('columns', $columns)

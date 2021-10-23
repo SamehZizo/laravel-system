@@ -24,7 +24,7 @@ class SystemChildController extends SystemGenericController
         $datatable_route = route($this->getRouteName() . '.child_datatable', [$parent_id]);
         $store_route = route($this->getStoreRouteName(), [$parent_id]);
 
-        return view('layouts.datatable_child')->with('singular_name', $singular_name)
+        return view('laravel-system::layouts.datatable_child')->with('singular_name', $singular_name)
             ->with('datatable_route', $datatable_route)
             ->with('create_route', $create_route)->with('store_route', $store_route)
             ->with('plural_name', $plural_name)->with('route_name', $route_name)->with('columns', $columns)
