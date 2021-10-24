@@ -16,7 +16,7 @@ class SystemFormFieldsController extends SystemController
         $this->setSingularName('System Form Field');
         $this->setPluralName('System Form Fields');
         $this->setRouteName("system_form_fields");
-        $this->setModelLocation('App\Models\System\FormBuilder\SystemFormField');
+        $this->setModelLocation('Sameh\LaravelSystem\Models\System\FormBuilder\SystemFormField');
         $this->setShowViewButton(false);
     }
 
