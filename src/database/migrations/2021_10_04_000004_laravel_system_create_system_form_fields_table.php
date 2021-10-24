@@ -21,10 +21,10 @@ class LaravelSystemCreateSystemFormFieldsTable extends Migration
             $table->bigInteger('field_id');
             $table->bigInteger('field_type_id');
             $table->integer('col');
-            $table->tinyInteger('is_hidden');
-            $table->tinyInteger('is_disable');
-            $table->tinyInteger('is_required');
-            $table->bigInteger('system_model_id');
+            $table->boolean('is_hidden')->default(0);
+            $table->boolean('is_disable')->default(0);
+            $table->boolean('is_required')->default(0);
+            $table->bigInteger('system_model_id')->nullable();
             $table->bigInteger('created_by')->nullable();
             $table->bigInteger('updated_by')->nullable();
             $table->bigInteger('deleted_by')->nullable();
