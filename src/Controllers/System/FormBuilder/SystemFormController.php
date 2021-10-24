@@ -54,13 +54,13 @@ class SystemFormController extends SystemController
 
     public function create()
     {
-        return view('form_builder.static.system_form')->with('singular_name', $this->getSingularName());
+        return view('laravel-system::form_builder.static.system_form')->with('singular_name', $this->getSingularName());
     }
 
     public function edit(Request $request, $id)
     {
         $row = $this->getModel()::find($id);
-        return view('form_builder.static.system_form')->with('singular_name', $this->getSingularName())->with('row', $row);
+        return view('laravel-system::form_builder.static.system_form')->with('singular_name', $this->getSingularName())->with('row', $row);
     }
 
     protected function get_view_button($row, $child): string

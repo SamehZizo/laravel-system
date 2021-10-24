@@ -84,7 +84,7 @@ class SystemFormFieldsController extends SystemController
         $system_fields = SystemField::orderBy('name')->get();
         $system_fields_types = SystemFieldsType::orderBy('title')->get();
 
-        return view('form_builder.static.system_form_field')
+        return view('laravel-system::form_builder.static.system_form_field')
             ->with('system_fields', $system_fields)
             ->with('system_fields_types', $system_fields_types)
             ->with('extra_form_data', $extra_form_data);
@@ -96,7 +96,7 @@ class SystemFormFieldsController extends SystemController
         $system_fields = SystemField::orderBy('name')->get();
         $system_fields_types = SystemFieldsType::orderBy('title')->get();
 
-        return view('form_builder.static.system_form_field')->with('row', $row)
+        return view('laravel-system::form_builder.static.system_form_field')->with('row', $row)
             ->with('system_fields', $system_fields)
             ->with('system_fields_types', $system_fields_types);
     }
