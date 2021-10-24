@@ -13,7 +13,7 @@ class SystemFormController extends SystemController
         $this->setSingularName('System Form');
         $this->setPluralName('System Forms');
         $this->setRouteName("system_forms");
-        $this->setModelLocation('App\Models\System\FormBuilder\SystemForm');
+        $this->setModelLocation('Sameh\LaravelSystem\Models\System\FormBuilder\SystemForm');
     }
 
     protected $columns = [

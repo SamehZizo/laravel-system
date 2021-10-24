@@ -13,7 +13,7 @@ class SystemFieldController extends SystemController
         $this->setSingularName('System Field');
         $this->setPluralName('System Fields');
         $this->setRouteName("system_fields");
-        $this->setModelLocation('App\Models\System\FormBuilder\SystemField');
+        $this->setModelLocation('Sameh\LaravelSystem\Models\System\FormBuilder\SystemField');
         $this->setShowViewButton(false);
     }
 
@@ -55,13 +55,13 @@ class SystemFieldController extends SystemController
 
     public function create()
     {
-        return view('form_builder.static.system_field')->with('singular_name', $this->getSingularName());
+        return view('laravel-system::form_builder.static.system_field')->with('singular_name', $this->getSingularName());
     }
 
     public function edit(Request $request, $id)
     {
         $row = $this->getModel()::find($id);
-        return view('form_builder.static.system_field')->with('singular_name', $this->getSingularName())->with('row', $row);
+        return view('laravel-system::form_builder.static.system_field')->with('singular_name', $this->getSingularName())->with('row', $row);
     }
 
 }

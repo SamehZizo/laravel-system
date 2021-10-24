@@ -45,12 +45,12 @@ class FormBuilderController
 
     private static function get_text_input($field, $record)
     {
-        return view('form_builder.fields.text_input')->with(['field' => $field, 'record' => $record]);
+        return view('laravel-system::form_builder.fields.text_input')->with(['field' => $field, 'record' => $record]);
     }
 
     private static function get_text_editor($field, $record)
     {
-        return view('form_builder.fields.text_editor')->with(['field' => $field, 'record' => $record]);
+        return view('laravel-system::form_builder.fields.text_editor')->with(['field' => $field, 'record' => $record]);
     }
 
     private static function get_model_dropdown($field, $record)
@@ -59,7 +59,7 @@ class FormBuilderController
             $system_model = SystemModels::find($field->system_model_id);
             if ($system_model) {
                 $model_items = app($system_model->location)::all();
-                return view('form_builder.fields.model_dropdown')->with(['field' => $field, 'items' => $model_items, 'record' => $record]);
+                return view('laravel-system::form_builder.fields.model_dropdown')->with(['field' => $field, 'items' => $model_items, 'record' => $record]);
             }
         }
 
@@ -68,17 +68,17 @@ class FormBuilderController
 
     private static function get_number_input($field, $record)
     {
-        return view('form_builder.fields.number_input')->with(['field' => $field, 'record' => $record]);
+        return view('laravel-system::form_builder.fields.number_input')->with(['field' => $field, 'record' => $record]);
     }
 
     private static function get_check_box($field, $record)
     {
-        return view('form_builder.fields.check_box')->with(['field' => $field, 'record' => $record]);
+        return view('laravel-system::form_builder.fields.check_box')->with(['field' => $field, 'record' => $record]);
     }
 
     private static function get_dropdown($field, $record)
     {
-        return view('form_builder.fields.dropdown')->with(['field' => $field, 'record' => $record]);
+        return view('laravel-system::form_builder.fields.dropdown')->with(['field' => $field, 'record' => $record]);
     }
 
     private static function get_multi_model_dropdown($field, $record)
@@ -95,7 +95,7 @@ class FormBuilderController
         //dd($field['title'], $record->$relation()->pluck($relation . '.id'));
         if ($field->model_loc) {
             $model_items = app($field->model_loc)::all();
-            return view('form_builder.fields.multi_model_dropdown')->with(['field' => $field, 'items' => $model_items, 'record' => $record, 'selected' => $selected]);
+            return view('laravel-system::form_builder.fields.multi_model_dropdown')->with(['field' => $field, 'items' => $model_items, 'record' => $record, 'selected' => $selected]);
         } else {
             return '';
         }
@@ -103,7 +103,7 @@ class FormBuilderController
 
     private static function get_date_input($field, $record)
     {
-        return view('form_builder.fields.date_input')->with(['field' => $field, 'record' => $record]);
+        return view('laravel-system::form_builder.fields.date_input')->with(['field' => $field, 'record' => $record]);
     }
 
 }
