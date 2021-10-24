@@ -14,7 +14,7 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
                     {{--@include('laravel-system::layouts.nav.menu_items')--}}
-                    @include(config('laravel_system.menu_layout'))
+                    @include(config('laravel_system.main_menu_layout'))
                 </ul>
 
                 <!-- Right Side Of Navbar -->
