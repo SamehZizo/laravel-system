@@ -2,8 +2,11 @@
 
 return [
 
-    // menu view has menu items
+    // menu view has menu items and system items
     'menu_layout' => 'laravel-system::layouts.nav.menu_items',
+
+    // main menu layout has menu items
+    'main_menu_layout' => 'laravel-system::layouts.nav.main_menu_layout',
 
     // single menu item
     'menu_item_layout' => 'laravel-system::layouts.nav.item',

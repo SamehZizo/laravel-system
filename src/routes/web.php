@@ -18,4 +18,6 @@ Route::group(['middleware' => ['web']], function () {
 
     Auth::routes(['register' => false]);
 
+    include 'web/form_builder.php';
+
 });
