@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\App;
 
 trait SystemAttributes
 {
-    public function getTitleAttribute($value)
+    /*public function getTitleAttribute($value)
     {
         if (App::getLocale() == 'ar' && isset($this->title_ar)) {
             return $this->title_ar;
@@ -19,7 +19,7 @@ trait SystemAttributes
         } else {
             return '';
         }
-    }
+    }*/
 
     public function getCreatedByAttribute($value)
     {

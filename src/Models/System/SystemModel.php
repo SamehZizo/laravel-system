@@ -14,7 +14,7 @@ class SystemModel extends SystemBasicModel
     use SoftDeletes, SystemDates, SystemAttributes, SystemFunctions;
 
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
-    public $appends = ['title'];
+    //public $appends = ['title'];
 
     public function __construct(array $attributes = [])
     {
