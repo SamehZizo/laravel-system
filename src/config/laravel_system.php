@@ -29,4 +29,10 @@ return [
     // extra foot
     'extra_foot_layout' => 'laravel-system::layouts.extra_foot',
 
+    // default tab in view
+    'tab_default' => 'laravel-system::layouts.modules.tabs.default_tab',
+
+    // normal tab in view
+    'tab' => 'laravel-system::layouts.modules.tabs.tab',
+
 ];
