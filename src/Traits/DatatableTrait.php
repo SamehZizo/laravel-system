@@ -16,37 +16,37 @@ trait DatatableTrait
 
                 $btn = '<ul class="list-inline mb-0">';
 
-                /*if ($child) {
-                    $view_route = route($this->getRouteName() . '.child_show', ['id' => $row->id]);
+                if ($child) {
+                    /*$view_route = route($this->getRouteName() . '.child_show', ['id' => $row->id]);
                     $edit_route = route($this->getRouteName() . '.child_edit', ['id' => $row->id]);
                     $update_route = route($this->getRouteName() . '.child_update', ['id' => $row->id]);
-                    $delete_route = route($this->getRouteName() . '.child_destroy', ['id' => $row->id]);
+                    $delete_route = route($this->getRouteName() . '.child_destroy', ['id' => $row->id]);*/
 
                     if ($this->getShowViewButton()) {
-                        $btn .= $this->get_child_view_button($row, $view_route);
+                        $btn .= $this->get_child_view_button($row);
                     }
 
                     if ($this->getShowEditButton()) {
-                        $btn .= $this->get_child_edit_button($row, $edit_route, $update_route);
+                        $btn .= $this->get_child_edit_button($row);
                     }
 
                     if ($this->getShowDeleteButton()) {
-                        $btn .= $this->get_child_delete_button($row, $delete_route);
+                        $btn .= $this->get_child_delete_button($row);
                     }
-                } else {*/
+                } else {
 
-                if ($this->getShowViewButton()) {
-                    $btn .= $this->get_view_button($row, $child);
-                }
+                    if ($this->getShowViewButton()) {
+                        $btn .= $this->get_view_button($row, $child);
+                    }
 
-                if ($this->getShowEditButton()) {
-                    $btn .= $this->get_edit_button($row);
-                }
+                    if ($this->getShowEditButton()) {
+                        $btn .= $this->get_edit_button($row);
+                    }
 
-                if ($this->getShowDeleteButton()) {
-                    $btn .= $this->get_delete_button($row);
+                    if ($this->getShowDeleteButton()) {
+                        $btn .= $this->get_delete_button($row);
+                    }
                 }
-                //}
 
                 $btn .= '</ul>';
 
@@ -88,6 +88,21 @@ trait DatatableTrait
         return '<li class="list-inline-item"><a href="#" class="text-danger" data-toggle="modal" data-target="#deleteModal" data-id="' . $row->id . '"
         data-title="' . $row->title . '" data-action="' . $delete_route . '" data-model-title="' . $this->getSingularName() . '"
         data-backdrop="static" data-keyboard="false"><i class="fa fa-trash"></i></a></li>';
+    }
+
+    protected function get_child_view_button($row)
+    {
+        return '';
+    }
+
+    protected function get_child_edit_button($row)
+    {
+        return '';
+    }
+
+    protected function get_child_delete_button($row)
+    {
+        return '';
     }
 
 }
