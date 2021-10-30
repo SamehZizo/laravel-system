@@ -2,7 +2,8 @@
 @section('content')
     <div class="row col-12 mt-2">
         <div class="col-12">
-            <h1 class="m-0">{{$record->getSingularName()}} : {{$record->$record->getTitleColumn()}}</h1>
+            @php $title_column = $record->getTitleColumn() @endphp
+            <h1 class="m-0">{{$record->getSingularName()}} : {{$record->$title_column}}</h1>
         </div>
         {{--<div class="col-6">
             <h1 class="m-0 pull-right">{{$record->title_ar}}</h1>
