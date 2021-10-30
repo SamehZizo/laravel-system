@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['web']], function () {
 
-    Auth::routes(['register' => false]);
+    Auth::routes(['register' => false, 'reset' => false]);
 
     include 'web/form_builder.php';
 

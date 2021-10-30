@@ -30,9 +30,15 @@ return [
     'extra_foot_layout' => 'laravel-system::layouts.extra_foot',
 
     // default tab in view
-    'tab_default' => 'laravel-system::layouts.modules.tabs.default_tab',
+    'module_tab_default' => 'laravel-system::layouts.modules.tabs.default_tab',
 
     // normal tab in view
-    'tab' => 'laravel-system::layouts.modules.tabs.tab',
+    'module_tab' => 'laravel-system::layouts.modules.tabs.tab',
+
+    // main section in view
+    'module_section_main' => 'laravel-system::layouts.modules.sections.main',
+
+    // child section in view
+    'module_section_child' => 'laravel-system::layouts.modules.sections.child',
 
 ];
