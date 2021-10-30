@@ -17,31 +17,43 @@ class SystemBasicController extends Controller
     private $model;
     private $show_view_button, $show_add_button, $show_edit_button, $show_delete_button;
     private $form_code;
+    private $title_column;
 
-    protected $columns = [
-        [
-            'data' => 'id',
-            'name' => 'Id',
-            'width' => 50,
-            'order' => 'asc',
-            'orderable' => false,
-        ],
-        [
-            'data' => 'title_en',
-            'name' => 'English Title',
-        ],
-        [
-            'data' => 'title_ar',
-            'name' => 'Arabic Title',
-        ],
-        [
-            'data' => 'action',
-            'name' => 'Action',
-            'orderable' => false,
-            'searchable' => false,
-            'width' => 80,
-        ],
-    ];
+    public function columns(): array
+    {
+        $title = $this->getTitleColumn();
+        return [
+            [
+                'data' => 'id',
+                'name' => 'Id',
+                'width' => 50,
+                'order' => 'asc',
+                'orderable' => false,
+            ],
+            [
+                'data' => $title,
+                'name' => $title,
+                'title' => 'Title',
+                'searchable' => true,
+                'orderable' => true,
+            ],
+            /*[
+                'data' => 'title_en',
+                'name' => 'English Title',
+            ],
+            [
+                'data' => 'title_ar',
+                'name' => 'Arabic Title',
+            ],*/
+            [
+                'data' => 'action',
+                'name' => 'Action',
+                'orderable' => false,
+                'searchable' => false,
+                'width' => 80,
+            ],
+        ];
+    }
 
     protected $store_validation = [
     ];
@@ -53,6 +65,8 @@ class SystemBasicController extends Controller
         $this->setPluralName('');
         $this->setRouteName('');
         $this->setModelLocation('');
+        // title column
+        $this->setTitleColumn('');
         // server side
         $this->setRunServerSide(true);
         // buttons
@@ -335,6 +349,22 @@ class SystemBasicController extends Controller
     public function setCreateRoute($create_route): void
     {
         $this->create_route = $create_route;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitleColumn()
+    {
+        return $this->title_column;
+    }
+
+    /**
+     * @param mixed $title_column
+     */
+    public function setTitleColumn($title_column): void
+    {
+        !empty($title_column) ? $this->title_column = $title_column : $this->title_column = 'title';
     }
 
     /**

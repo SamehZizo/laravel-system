@@ -20,7 +20,7 @@ class SystemGenericController extends SystemBasicController
         $singular_name = $this->getSingularName();
         $plural_name = $this->getPluralName();
         $route_name = $this->getRouteName();
-        $columns = $this->columns;
+        $columns = $this->columns();
         $run_server_side = $this->getRunServerSide();
         $show_add_button = $this->getShowAddButton();
 

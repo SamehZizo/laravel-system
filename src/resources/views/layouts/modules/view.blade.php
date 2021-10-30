@@ -1,12 +1,12 @@
 @extends('laravel-system::layouts.app')
 @section('content')
     <div class="row col-12 mt-2">
-        <div class="col-6">
-            <h1 class="m-0">{{$record->getSingularName()}} : {{$record->title}}</h1>
+        <div class="col-12">
+            <h1 class="m-0">{{$record->getSingularName()}} : {{$record->$record->getTitleColumn()}}</h1>
         </div>
-        <div class="col-6">
+        {{--<div class="col-6">
             <h1 class="m-0 pull-right">{{$record->title_ar}}</h1>
-        </div>
+        </div>--}}
     </div>
     <hr class="row col-12">
     {{--Above open to view toolbar--}}
