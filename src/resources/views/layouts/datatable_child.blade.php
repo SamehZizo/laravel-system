@@ -1,4 +1,4 @@
-<div class="p-3">
+<div {{--class="p-3"--}}>
     <div class="row col-12 m-0 p-0 d-inline-flex">
         <div class="col-md-6 col-xs-12 m-0 p-0"><h2>{{$plural_name}}</h2></div>
         <div class="col-md-6 col-xs-12 m-0 p-0 text-right mb-3">
