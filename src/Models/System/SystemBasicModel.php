@@ -8,6 +8,7 @@ class SystemBasicModel extends Model
 {
     private $singular_name, $plural_name, $title_name;
     private $route_name;
+    private $title_column;
     protected $extra_appends = [];
 
     public function __construct(array $attributes = [])
@@ -17,6 +18,7 @@ class SystemBasicModel extends Model
         $this->setPluralName('');
         $this->setTitleName('');
         $this->setRouteName('');
+        $this->setTitleColumn('');
         $this->appends = array_merge($this->appends, $this->extra_appends);
     }
 
@@ -82,6 +84,22 @@ class SystemBasicModel extends Model
     public function setRouteName($route_name): void
     {
         $this->route_name = $route_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitleColumn()
+    {
+        return $this->title_column;
+    }
+
+    /**
+     * @param mixed $title_column
+     */
+    public function setTitleColumn($title_column): void
+    {
+        !empty($title_column) ? $this->title_column = $title_column : $this->title_column = 'title';
     }
 
 }
