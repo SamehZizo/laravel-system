@@ -32,6 +32,17 @@ php artisan vendor:publish --force
 Sameh\LaravelSystem\LaravelSystemServiceProvider::class,
   ```
   
+#### 5. Run migration
+```sh
+php artisan migrate
+  ```
+  
+#### 6. Run package seed
+```sh
+php artisan db:seed --class=Sameh\LaravelSystem\database\seeds\LaravelSystemDatabaseSeeder
+  ```
+  
+  
 ## Settings
 
 - #### Change menu file
