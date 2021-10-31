@@ -25,10 +25,11 @@ class SystemBasicController extends Controller
         return [
             [
                 'data' => 'id',
-                'name' => 'Id',
+                'name' => 'id',
+                'title' => 'Id',
                 'width' => 50,
                 'order' => 'asc',
-                'orderable' => false,
+                'orderable' => true,
             ],
             [
                 'data' => $title,

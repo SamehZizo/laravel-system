@@ -26,7 +26,7 @@ class SystemFieldController extends SystemController
                 'title' => 'Id',
                 'width' => 50,
                 'order' => 'asc',
-                'orderable' => false,
+                'orderable' => true,
             ],
             [
                 'data' => 'title',
