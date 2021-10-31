@@ -20,48 +20,51 @@ class SystemFormFieldsController extends SystemController
         $this->setShowViewButton(false);
     }
 
-    protected $columns = [
-        [
-            'data' => 'id',
-            'name' => 'id',
-            'title' => 'Id',
-            'width' => 50,
-            'order' => 'asc',
-            'orderable' => false,
-        ],
-        [
-            'data' => 'field.title',
-            'name' => 'field.title',
-            'title' => 'Title',
-        ],
-        [
-            'data' => 'col',
-            'name' => 'col',
-            'title' => 'Columns',
-        ],
-        [
-            'data' => 'is_required',
-            'name' => 'is_required',
-            'title' => 'Required',
-        ],
-        [
-            'data' => 'is_hidden',
-            'name' => 'is_hidden',
-            'title' => 'Hidden',
-        ],
-        [
-            'data' => 'is_disable',
-            'name' => 'is_disable',
-            'title' => 'Disable',
-        ],
-        [
-            'data' => 'action',
-            'name' => 'Action',
-            'orderable' => false,
-            'searchable' => false,
-            'width' => 80,
-        ],
-    ];
+    public function columns(): array
+    {
+        return [
+            [
+                'data' => 'id',
+                'name' => 'id',
+                'title' => 'Id',
+                'width' => 50,
+                'order' => 'asc',
+                'orderable' => false,
+            ],
+            [
+                'data' => 'field.title',
+                'name' => 'field.title',
+                'title' => 'Title',
+            ],
+            [
+                'data' => 'col',
+                'name' => 'col',
+                'title' => 'Columns',
+            ],
+            [
+                'data' => 'is_required',
+                'name' => 'is_required',
+                'title' => 'Required',
+            ],
+            [
+                'data' => 'is_hidden',
+                'name' => 'is_hidden',
+                'title' => 'Hidden',
+            ],
+            [
+                'data' => 'is_disable',
+                'name' => 'is_disable',
+                'title' => 'Disable',
+            ],
+            [
+                'data' => 'action',
+                'name' => 'Action',
+                'orderable' => false,
+                'searchable' => false,
+                'width' => 80,
+            ],
+        ];
+    }
 
     public function getModelData(Request $request, $parent_id = null)
     {

@@ -17,37 +17,40 @@ class SystemFieldController extends SystemController
         $this->setShowViewButton(false);
     }
 
-    protected $columns = [
-        [
-            'data' => 'id',
-            'name' => 'id',
-            'title' => 'Id',
-            'width' => 50,
-            'order' => 'asc',
-            'orderable' => false,
-        ],
-        [
-            'data' => 'title',
-            'name' => 'title',
-            'title' => 'Title',
-            'searchable' => true,
-            'orderable' => true,
-        ],
-        [
-            'data' => 'name',
-            'name' => 'name',
-            'title' => 'Name',
-            'searchable' => true,
-            'orderable' => true,
-        ],
-        [
-            'data' => 'action',
-            'name' => 'Action',
-            'orderable' => false,
-            'searchable' => false,
-            'width' => 80,
-        ],
-    ];
+    public function columns(): array
+    {
+        return [
+            [
+                'data' => 'id',
+                'name' => 'id',
+                'title' => 'Id',
+                'width' => 50,
+                'order' => 'asc',
+                'orderable' => false,
+            ],
+            [
+                'data' => 'title',
+                'name' => 'title',
+                'title' => 'Title',
+                'searchable' => true,
+                'orderable' => true,
+            ],
+            [
+                'data' => 'name',
+                'name' => 'name',
+                'title' => 'Name',
+                'searchable' => true,
+                'orderable' => true,
+            ],
+            [
+                'data' => 'action',
+                'name' => 'Action',
+                'orderable' => false,
+                'searchable' => false,
+                'width' => 80,
+            ],
+        ];
+    }
 
     protected $store_validation = [
         'name' => 'unique:system_fields'
