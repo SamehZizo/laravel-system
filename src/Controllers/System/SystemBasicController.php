@@ -384,7 +384,7 @@ class SystemBasicController extends Controller
     {
     }
 
-    protected function update_relation(Request $request, $model)
+    protected function update_relations(Request $request, $model)
     {
     }
 }

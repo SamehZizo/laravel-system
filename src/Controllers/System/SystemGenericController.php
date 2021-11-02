@@ -91,7 +91,7 @@ class SystemGenericController extends SystemBasicController
         $new_model->save();
         $new_model->set_admin_data(true);
         $this->before_store($request, $new_model);
-        $this->update_relation($request, $new_model);
+        $this->update_relations($request, $new_model);
         return response()->json($this->getSingularName() . ' created successfully');
     }
 
@@ -120,7 +120,7 @@ class SystemGenericController extends SystemBasicController
         $model->save();
         $model->set_admin_data();
         $this->before_update($request, $model);
-        $this->update_relation($request, $model);
+        $this->update_relations($request, $model);
         return response()->json($this->getSingularName() . ' updated successfully');
     }
 
