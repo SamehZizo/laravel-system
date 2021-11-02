@@ -387,4 +387,9 @@ class SystemBasicController extends Controller
     protected function update_relations(Request $request, $model)
     {
     }
+
+    protected function show_warning_in_modal($message): string
+    {
+        return '<div class="text-danger col-12 text-center">' . $message . '</div>';
+    }
 }

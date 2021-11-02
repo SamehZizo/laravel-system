@@ -72,9 +72,11 @@ class SystemGenericController extends SystemBasicController
         dd($extra_form_data);*/
         $form = SystemForm::where('code', $this->getFormCode())->first();
         if (!$form) {
-            return '<div class="text-danger">No form added yet !</div>';
+            return $this->show_warning_in_modal('No form added yet !');
+            //return '<div class="text-danger col-12 text-center">No form added yet !</div>';
         } elseif (count($form->fields) == 0) {
-            return '<div class="text-danger">No fields added yet !</div>';
+            return $this->show_warning_in_modal('No fields added yet !');
+            //return '<div class="text-danger col-12 text-center">No fields added yet !</div>';
         } else {
             return FormBuilderController::build($form, /*$this->extra_form_data*/ null);
         }
@@ -100,9 +102,11 @@ class SystemGenericController extends SystemBasicController
         $record = $this->getModel()::find($id);
         $form = SystemForm::where('code', $this->getFormCode())->first();
         if (!$form) {
-            return '<div class="text-danger col-12 text-center">No form added yet !</div>';
+            return $this->show_warning_in_modal('No form added yet !');
+            //return '<div class="text-danger col-12 text-center">No form added yet !</div>';
         } elseif (count($form->fields) == 0) {
-            return '<div class="text-danger col-12 text-center">No fields added yet !</div>';
+            return $this->show_warning_in_modal('No fields added yet !');
+            //return '<div class="text-danger col-12 text-center">No fields added yet !</div>';
         } else {
             return FormBuilderController::build($form, /*$this->extra_form_data*/ null, $record);
         }
