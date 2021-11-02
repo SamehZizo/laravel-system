@@ -378,6 +378,13 @@ class SystemBasicController extends Controller
 
     protected function before_store(Request $request, $model)
     {
+    }
 
+    protected function before_update(Request $request, $model)
+    {
+    }
+
+    protected function update_relation(Request $request, $model)
+    {
     }
 }

@@ -91,6 +91,7 @@ class SystemGenericController extends SystemBasicController
         $new_model->save();
         $new_model->set_admin_data(true);
         $this->before_store($request, $new_model);
+        $this->update_relation($request, $new_model);
         return response()->json($this->getSingularName() . ' created successfully');
     }
 
@@ -99,9 +100,9 @@ class SystemGenericController extends SystemBasicController
         $record = $this->getModel()::find($id);
         $form = SystemForm::where('code', $this->getFormCode())->first();
         if (!$form) {
-            return '<div class="text-danger">No form added yet !</div>';
+            return '<div class="text-danger col-12 text-center">No form added yet !</div>';
         } elseif (count($form->fields) == 0) {
-            return '<div class="text-danger">No fields added yet !</div>';
+            return '<div class="text-danger col-12 text-center">No fields added yet !</div>';
         } else {
             return FormBuilderController::build($form, /*$this->extra_form_data*/ null, $record);
         }
@@ -118,6 +119,8 @@ class SystemGenericController extends SystemBasicController
         $model->fill($request->all());
         $model->save();
         $model->set_admin_data();
+        $this->before_update($request, $model);
+        $this->update_relation($request, $model);
         return response()->json($this->getSingularName() . ' updated successfully');
     }
 
