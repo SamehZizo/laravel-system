@@ -17,9 +17,9 @@
   ]
   ```
 
-#### 2. Run below command to update composer
+#### 2. Run below command to install composer
 ```sh
-composer update
+composer install
   ```
 
 #### 3. Run below comand to publish files, then select (**laravel-system**) number
