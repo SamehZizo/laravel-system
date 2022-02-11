@@ -17,12 +17,12 @@
   ]
   ```
 
-#### 2. Run below command to install composer
+#### 2. Run below command to update composer
 ```sh
-composer install
+composer update
   ```
 
-#### 3. Run below comand to publish files, then select (**laravel-system**) number
+#### 3. Run below command to publish files, then select (**laravel-system**) number
 ```sh
 php artisan vendor:publish --force
   ```
