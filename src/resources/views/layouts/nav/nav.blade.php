@@ -1,6 +1,6 @@
 <!--<div id="app">-->
 @if(Auth::user())
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <nav class="navbar navbar-expand-md navbar-light bg-white {{--shadow-sm--}} border-bottom">
         <div class="{{--container--}}" style="width: 100%">
             {{--<a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
