@@ -16,6 +16,7 @@ class SystemFieldsTypesSeeder extends Seeder
         array('id' => 6, 'title' => 'Dropdown', 'slug' => 'dropdown'),
         array('id' => 7, 'title' => 'Multi Model Dropdown', 'slug' => 'multi-model-dropdown'),
         array('id' => 8, 'title' => 'Date Input', 'slug' => 'date-input'),
+        array('id' => 9, 'title' => 'File Input', 'slug' => 'file-input'),
     );
 
     public function run()

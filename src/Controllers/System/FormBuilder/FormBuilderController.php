@@ -36,6 +36,9 @@ class FormBuilderController
                 case 'date-input':
                     $html_form .= self::get_date_input($field, $record);
                     break;
+                case 'file-input':
+                    $html_form .= self::get_file_input($field, $record);
+                    break;
             }
         }
 
@@ -104,6 +107,11 @@ class FormBuilderController
     private static function get_date_input($field, $record)
     {
         return view('laravel-system::form_builder.fields.date_input')->with(['field' => $field, 'record' => $record]);
+    }
+
+    private static function get_file_input($field, $record)
+    {
+        return view('laravel-system::form_builder.fields.file_input')->with(['field' => $field, 'record' => $record]);
     }
 
 }
