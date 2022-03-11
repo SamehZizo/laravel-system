@@ -60,7 +60,9 @@ $(document).on('submit', '#formBuilderModalForm', function (e) {
     if (modalType === 'create') {
         type = 'POST'
     } else if (modalType === 'edit') {
-        type = 'PUT'
+        //type = 'PUT'
+        type = 'POST'
+        formData.append('_method', 'PATCH');
     }
 
     $.ajax({
