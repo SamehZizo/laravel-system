@@ -48,6 +48,7 @@ $(document).on('shown.bs.modal', '#formBuilderModal', function (e) {
 $(document).on('submit', '#formBuilderModalForm', function (e) {
     e.preventDefault()
     let form = $(this)
+    let formData = new FormData(this);
 
     let submitButton = form.find('.submit')
     submitButton.prop('disabled', true)
@@ -65,7 +66,9 @@ $(document).on('submit', '#formBuilderModalForm', function (e) {
     $.ajax({
         url: route,
         type: type,
-        data: new FormData($(this)),
+        data: formData,
+        processData: false,
+        contentType: false,
         success: function (response) {
             showSuccessToast(response)
             refreshDatatable()
