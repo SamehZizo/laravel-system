@@ -65,7 +65,7 @@ $(document).on('submit', '#formBuilderModalForm', function (e) {
     $.ajax({
         url: route,
         type: type,
-        data: $(this).serialize(),
+        data: new FormData($(this)),
         success: function (response) {
             showSuccessToast(response)
             refreshDatatable()
