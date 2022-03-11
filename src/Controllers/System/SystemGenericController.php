@@ -91,6 +91,7 @@ class SystemGenericController extends SystemBasicController
         $new_model = $this->getModel();
         $new_model->fill($request->all());
         $new_model->save();
+        $this->saveFiles($request, $new_model);
         $new_model->set_admin_data(true);
         $this->before_store($request, $new_model);
         $this->update_relations($request, $new_model);
