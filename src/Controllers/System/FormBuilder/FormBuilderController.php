@@ -4,6 +4,7 @@ namespace Sameh\LaravelSystem\Controllers\System\FormBuilder;
 
 use Sameh\LaravelSystem\Models\System\FormBuilder\SystemForm;
 use Sameh\LaravelSystem\Models\System\FormBuilder\SystemModels;
+use Sameh\LaravelSystem\Models\System\SystemFile;
 
 class FormBuilderController
 {
@@ -111,6 +112,9 @@ class FormBuilderController
 
     private static function get_file_input($field, $record)
     {
+        $file = SystemFile::where('model', get_class($record))->where('model_id', $record->id)->where('name', $field->name)
+            ->latest('created_at')->first();
+        $record[$field->name] = url($file->location);
         return view('laravel-system::form_builder.fields.file_input')->with(['field' => $field, 'record' => $record]);
     }
 

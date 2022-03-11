@@ -123,6 +123,7 @@ class SystemGenericController extends SystemBasicController
         $model = $this->getModel()::find($request['id']);
         $model->fill($request->all());
         $model->save();
+        $this->saveFiles($request, $model);
         $model->set_admin_data();
         $this->before_update($request, $model);
         $this->update_relations($request, $model);
