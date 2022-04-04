@@ -14,6 +14,7 @@ function showDangerToast(msg) {
 
 function refreshDatatable() {
     $('.data-table').DataTable().ajax.reload(null, false)
+    $('.data-table-child').DataTable().ajax.reload(null, false)
 }
 
 function closeModalAutomatic(closeModal) {
