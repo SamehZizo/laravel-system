@@ -1,8 +1,8 @@
 function initDateTable(element, run_server_side, datatable_route, columns) {
     //element.DataTable().clear().destroy();
-    if ($.fn.DataTable.isDataTable(element)) {
-        element.destroy();
-    }
+    /*if ($.fn.DataTable.isDataTable(element)) {
+        element.DataTable.destroy();
+    }*/
 
     var cols = ''
     columns.forEach(function (column, index) {
@@ -13,6 +13,7 @@ function initDateTable(element, run_server_side, datatable_route, columns) {
         processing: true,
         searching: true,
         ordering: true,
+        destroy: true,
         sProcessing: getHtmlLoaderView(),
         serverSide: run_server_side,
         ajax: datatable_route,
