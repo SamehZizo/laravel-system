@@ -20,7 +20,7 @@ class ErrorLogController
         $exceptionLog->message = $e->getMessage() ?? null;
         $exceptionLog->trace = $e->getTraceAsString() ?? null;
         // request
-        $exceptionLog->body = $request->all() ?? null;
+        $exceptionLog->body = json_encode($request->all()) ?? null;
         $exceptionLog->url = $request->url() ?? null;
         $exceptionLog->agent = $request->userAgent() ?? null;
         $exceptionLog->root = $request->root() ?? null;

@@ -12,7 +12,7 @@ use Sameh\LaravelSystem\Models\System\SystemModel;
  * @property int|mixed|null $line
  * @property mixed|string|null $message
  * @property mixed|string|null $trace
- * @property array|mixed|null $body
+ * @property string|mixed|null $body
  * @property mixed|string|null $url
  * @property mixed|string|null $agent
  * @property mixed|string|null $root
