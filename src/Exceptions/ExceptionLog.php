@@ -20,7 +20,7 @@ use Sameh\LaravelSystem\Models\System\SystemModel;
  * @property bool|mixed $is_json
  * @property bool|mixed $is_ajax
  */
-class ExceptionLog extends SystemModel
+class ErrorLog extends SystemModel
 {
 
 }
