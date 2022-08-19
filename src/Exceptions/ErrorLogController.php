@@ -14,7 +14,7 @@ class ErrorLogController
             $errorLog = new ErrorLog;
             // throwable
             $errorLog->source_id = null;
-            $errorLog->user_id = Auth::user()->id ?? null;
+            $errorLog->user_id = Auth::check() ? Auth::id() : null;
             $errorLog->code = $e->getCode() ?? null;
             $errorLog->file = $e->getFile() ?? null;
             $errorLog->line = $e->getLine() ?? null;
@@ -25,7 +25,7 @@ class ErrorLogController
             $errorLog->url = $request->url() ?? null;
             $errorLog->agent = $request->userAgent() ?? null;
             $errorLog->root = $request->root() ?? null;
-            $errorLog->header = $request->header() ?? null;
+            $errorLog->header = json_encode($request->header()) ?? null;
             $errorLog->is_json = $request->acceptsJson();
             $errorLog->is_ajax = $request->ajax();
             // save
@@ -33,6 +33,8 @@ class ErrorLogController
         } catch (\Exception $e) {
             $errorLog = new ErrorLog;
             $errorLog->message = $e->getMessage();
+            $errorLog->is_json = $request->acceptsJson();
+            $errorLog->is_ajax = $request->ajax();
             $errorLog->save();
         }
 
