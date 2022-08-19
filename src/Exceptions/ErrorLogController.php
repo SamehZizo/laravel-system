@@ -11,29 +11,29 @@ class ErrorLogController
     public static function storeErrorLog(Throwable $e, Request $request)
     {
         try {
-            $exceptionLog = new ExceptionLog;
+            $errorLog = new ErrorLog;
             // throwable
-            $exceptionLog->source_id = null;
-            $exceptionLog->user_id = Auth::user()->id ?? null;
-            $exceptionLog->code = $e->getCode() ?? null;
-            $exceptionLog->file = $e->getFile() ?? null;
-            $exceptionLog->line = $e->getLine() ?? null;
-            $exceptionLog->message = $e->getMessage() ?? null;
-            $exceptionLog->trace = $e->getTraceAsString() ?? null;
+            $errorLog->source_id = null;
+            $errorLog->user_id = Auth::user()->id ?? null;
+            $errorLog->code = $e->getCode() ?? null;
+            $errorLog->file = $e->getFile() ?? null;
+            $errorLog->line = $e->getLine() ?? null;
+            $errorLog->message = $e->getMessage() ?? null;
+            $errorLog->trace = $e->getTraceAsString() ?? null;
             // request
-            $exceptionLog->body = json_encode($request->all()) ?? null;
-            $exceptionLog->url = $request->url() ?? null;
-            $exceptionLog->agent = $request->userAgent() ?? null;
-            $exceptionLog->root = $request->root() ?? null;
-            $exceptionLog->header = $request->header() ?? null;
-            $exceptionLog->is_json = $request->acceptsJson();
-            $exceptionLog->is_ajax = $request->ajax();
+            $errorLog->body = json_encode($request->all()) ?? null;
+            $errorLog->url = $request->url() ?? null;
+            $errorLog->agent = $request->userAgent() ?? null;
+            $errorLog->root = $request->root() ?? null;
+            $errorLog->header = $request->header() ?? null;
+            $errorLog->is_json = $request->acceptsJson();
+            $errorLog->is_ajax = $request->ajax();
             // save
-            $exceptionLog->save();
+            $errorLog->save();
         } catch (\Exception $e) {
-            $exceptionLog = new ExceptionLog;
-            $exceptionLog->message = $e->getMessage();
-            $exceptionLog->save();
+            $errorLog = new ErrorLog;
+            $errorLog->message = $e->getMessage();
+            $errorLog->save();
         }
 
     }
