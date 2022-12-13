@@ -6,7 +6,11 @@ function initDateTable(element, run_server_side, datatable_route, columns) {
 
     var cols = ''
     columns.forEach(function (column, index) {
-        cols += '<th>' + column.name + '</th>'
+        if (column.type === 'image') {
+            cols += '<th><img src="' + column.name + '" alt="' + column.title + '"></th>'
+        } else {
+            cols += '<th>' + column.name + '</th>'
+        }
     })
     element.html('<thead><tr>' + cols + '</tr></thead>')
     element.DataTable({
