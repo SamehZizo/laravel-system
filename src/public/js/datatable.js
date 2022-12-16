@@ -7,7 +7,7 @@ function initDateTable(element, run_server_side, datatable_route, columns) {
     var cols = ''
     columns.forEach(function (column, index) {
         if (column.type === 'image') {
-            cols += '<th><img src="' + column.name + '" alt="' + column.name + '"></th>'
+            cols += '<th><img alt="' + column.name + '"></th>'
             columns[index].render = function (data) {
                 let width = column.width != null ? column.width : 80
                 return "<img src='" + data + "' alt='" + column.name + "' width='" + width + "px'>";
